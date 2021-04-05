@@ -1,5 +1,6 @@
-import JustValidate from '../just-validate';
+import '../just-validate';
 import Inputmask from "inputmask";
+
 
 const maskValidate = () => {
     const inputs = document.querySelectorAll('input[type="tel"]');
@@ -18,11 +19,16 @@ let validateForms = function(selector, rules, successModal, yaGoal) {
 }
 
 validateForms('.online__form', { 
+    phone: { 
+        required: true 
+    },
     name: { 
         required: true
     }, 
-    phone: { 
-        required: true 
+    messages: {
+        required: 'Поле не заполнено',
+        name: 'алповадлпвадлпо',
+        phone: 'ывлпаовадлпвадлпо'
     },
 
 });

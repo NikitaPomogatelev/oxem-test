@@ -24847,11 +24847,16 @@ var maskValidate = function maskValidate() {
   };
 
   validateForms('.online__form', {
+    phone: {
+      required: true
+    },
     name: {
       required: true
     },
-    phone: {
-      required: true
+    messages: {
+      required: 'Поле не заполнено',
+      name: 'алповадлпвадлпо',
+      phone: 'ывлпаовадлпвадлпо'
     }
   });
 };

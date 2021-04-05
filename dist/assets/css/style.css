@@ -2376,7 +2376,7 @@ button.swiper-pagination-bullet {
   }
 }
 
-.online-footer__descr span {
+.online-footer__descr a {
   color: black;
 }
 
@@ -2427,6 +2427,7 @@ button.swiper-pagination-bullet {
 }
 
 .online-socials--telegram svg {
+  left: 47%;
   width: 22px;
   height: 17px;
 }
