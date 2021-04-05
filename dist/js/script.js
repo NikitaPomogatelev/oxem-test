@@ -24990,8 +24990,9 @@ var rangeSlider = function rangeSlider() {
     inputCost.value = Math.round(values[1]);
     calcCost();
   });
-  paymentSlider.noUiSlider.on('update', function (values, handle) {
-    inputPayment.value = Math.round(values[1]);
+  paymentSlider.noUiSlider.on('update', function (values) {
+    var calcPayPercent = inputPayment.value * 100 / 100;
+    console.log(calcPayPercent);
     calcInputPercent.textContent = "".concat(Math.round(values[1]), "%");
     calcCost();
   });
@@ -25004,8 +25005,9 @@ var rangeSlider = function rangeSlider() {
     calcCost();
   });
   inputPayment.addEventListener('change', function (e) {
-    setRangeSlider(paymentSlider, e.currentTarget.value);
-    calcCost(); // console.log(res);
+    var payPercent = Math.round(e.currentTarget.value * 100 / inputCost.value);
+    setRangeSlider(paymentSlider, payPercent);
+    calcCost();
   });
   inputDate.addEventListener('change', function (e) {
     setRangeSlider(dateSlider, e.currentTarget.value);

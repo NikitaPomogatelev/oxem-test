@@ -67,8 +67,6 @@ const rangeSlider = () => {
         // Первончальный взнос в цифрах
         let calcPayment = inputCost.value * percent / 100;
         inputPayment.value = (Math.round(calcPayment));
-        
-        
         // Ежемесячный платеж
         let calcCostPerMounth = inputCost.value - inputPayment.value * ((percent / 100) / (1 + (percent / 100)) - inputDate.value - 1);
         inputPerMounth.value = `${Math.round(calcCostPerMounth)} ₽`;
@@ -83,8 +81,9 @@ const rangeSlider = () => {
         inputCost.value = Math.round(values[1]);
         calcCost();
     });
-    paymentSlider.noUiSlider.on('update', (values, handle) => {
-        inputPayment.value = Math.round(values[1])
+    paymentSlider.noUiSlider.on('update', (values) => {
+        let calcPayPercent = inputPayment.value * 100 / 100;
+        console.log(calcPayPercent);
         calcInputPercent.textContent = `${Math.round(values[1])}%`;
         calcCost();
     });
@@ -98,11 +97,10 @@ const rangeSlider = () => {
         calcCost();
     });
     inputPayment.addEventListener('change', (e) => {
-
-
-        setRangeSlider(paymentSlider, e.currentTarget.value);
+        let payPercent = Math.round(e.currentTarget.value * 100 / inputCost.value);
+        setRangeSlider(paymentSlider, payPercent);
         calcCost();
-        // console.log(res);
+
     });
     inputDate.addEventListener('change', (e) => {
         setRangeSlider(dateSlider, e.currentTarget.value);
