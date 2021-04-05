@@ -1,0 +1,152 @@
+.header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 5
+    background-color: $white
+    @media (max-width: 768px)
+        background-color: transparent
+    
+    
+    &__container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 20px
+    &-left
+        display: flex
+        align-items: center 
+    &-right
+        display: flex
+        align-items: center
+        @media (max-width: 1200px)
+            display: none
+    &__logo
+        width: 200px
+        height: 35px
+        margin-right: 35px
+        display: flex
+
+
+        
+        
+    &__logo-descr
+        position: relative
+
+        +gilroy-reg
+        font-size: 16px
+        letter-spacing: 0.92px
+        color: lighten($dark, 40%)
+        z-index: 10
+        &::before
+            content: ''
+            position: absolute
+            left: -18px
+            top: 50%
+            display: inline-block
+            width: 1px
+            height: 30px
+            background-color: #C4C4C4
+
+            transform: translateY(-50%)
+            z-index: 9999
+        @media (max-width: 768px)
+            display: none
+                
+    &__item
+        display: inline-block
+        
+    &__item:last-of-type
+        margin-right: 40px
+        
+    &__link
+        position: relative
+        padding: 6px 15px
+        +gilroy-bold
+        font-size: 16px
+        color: $gray
+        transition: background-color .3s ease
+    &-submenu__list
+        display: none
+        padding-top: 5px
+        position: absolute
+        top: 58px
+        z-index: 10
+        background: $white;
+
+        border: 1px solid #F3F3F4
+        box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04), 0px 14px 24px rgba(51, 51, 51, 0.12)
+        border-radius: 15px
+        overflow: hidden
+    &-submenu__item
+        padding: 8px 16px
+        &:hover
+            background-color: #F3F3F4
+
+
+
+    &-menu
+        position: absolute
+        top: 0
+        right: 0
+        display: flex
+        // display: none
+        flex-direction: column
+        width: 329px
+        height: 610px
+        padding: 60px 40px
+        background-color: $white
+        border-radius: 32px 0px 0px 0px
+        transform: translateX(100%)
+        transition: transform .3s ease
+        
+        @media (max-width: 768px)
+            max-width: 260px
+            height: 514
+            
+    &-menu__item:not(:last-of-type)
+        margin-bottom: 30px
+    &-menu__link
+        +gilroy-bold
+        font-size: 24px
+        color: $gray
+    &-menu__btn
+        margin-top: auto
+        padding: 13px 24px
+        max-width: 249px
+    &-menu.active
+        transform: translateX(0%)
+    &-close
+        position: absolute
+        top: 3%
+        right: 5%
+        width: 32px
+        height: 32px
+        
+    &-close__line
+        position: absolute
+        top: 50%
+        left: 50%
+        display: inline-block
+        width: 19px
+        height: 2.5px
+        border-radius: 10px
+        background-color: $dark
+        transform: translate(-50%, -50%)
+    &-close__line--one
+        transform: translate(-50%, -50%) rotate(45deg)
+    &-close__line--two
+        transform: translate(-50%, -50%) rotate(-45deg)
+
+
+
+.header__item:hover
+    .header-submenu__list
+        display: block
+
+
+
+@media( min-width: 1200px)
+    .header__link:hover
+        background-color: #F3F3F4

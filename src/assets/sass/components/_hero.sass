@@ -1,0 +1,137 @@
+.hero
+    &__container
+        @media (max-width: 768px)
+            padding: 0
+    .swiper-container
+        border-radius: 32px
+        @media (max-width: 768px)
+            border-radius: 0 0 32px 32px  
+        
+    // .swiper-slide
+       
+    &__item-inner
+        padding-top: 70px
+        padding-left: 70px
+        @media (max-width: 1024px)
+            padding-top: 220px;
+            padding-left: 44px
+        @media (max-width: 768px)
+            padding-left: 22px
+    &__item
+        height: 473px
+        background-color: $dark
+        
+        +nekst-black
+        color: $white
+        background-image: url('../../assets/img/hero-image.jpg')
+        background-repeat: no-repeat
+        background-position: 100% 0
+        @media (max-width: 1200px)
+            background-size: 65%
+            background-position: 100% 100%
+        @media (max-width: 1024px)
+            background-image: url('../../assets/img/hero-image-2.jpg')
+            background-size: 78%
+            background-position: 50% -8%
+        @media (max-width: 768px)
+            background-size: 90%
+            background-position: -228% 25%
+
+            
+    &__title
+        max-width: 585px
+        line-height: 1
+        font-size: 54px
+        margin-bottom: 32px
+        @media (max-width: 768px)
+            max-width: 265px
+            font-size: 32px
+    &__descr
+        max-width: 400px
+        margin-bottom: 24px
+        font-size: 30px
+        @media (max-width: 1024px)
+            display: none
+    &__btn
+        padding: 15px 24px
+    .swiper-pagination
+        bottom: 35px
+
+        display: flex
+        align-items: center
+        justify-content: center
+        @media (max-width: 1024px)
+            bottom: 28px
+    .swiper-pagination-bullet
+        
+        width: 6px
+        height: 6px
+        
+        background-color: rgba($white, 0.4)
+    .swiper-pagination-bullet.swiper-pagination-bullet-active
+        width: 12px
+        height: 12px
+        background-color: rgba($white, 1)
+    .swiper-pagination-bullets .swiper-pagination-bullet
+        margin: 0
+    .swiper-pagination-bullets .swiper-pagination-bullet:not(:last-of-type)
+        margin-right: 18px
+    &-button-prev,
+    &-button-next
+        position: absolute
+        bottom: 44px
+        right: 44px
+        z-index: 1
+        cursor: pointer
+        @media (max-width: 1024px)
+            display: none
+            
+    &-button-prev
+        right: 108px
+        bottom: 56px
+        width: 28px
+        height: 28px
+        border: 2px solid $gray
+        border-radius: 100%
+    &-button-next
+        width: 50px
+        height: 50px
+        
+        svg
+            
+            width: 50px
+            height: 50px
+            display: inline-block
+            stroke: $white
+            border-radius: 100%
+            .hero-ring__circle
+                stroke-dasharray: 2 5
+                transition: stroke-dashoffset 0.35s
+                transform: rotate(-90deg)
+                
+                transform-origin: 50% 50%
+    &-button__arrow-next
+        position: absolute
+        top: 50%
+        left: 42%
+    
+        width: 16px
+        height: 16px
+        border-top: 2px solid $white
+        border-right: 2px solid $white
+        transform: translate(-50%, -50%) rotate(45deg)
+    &-button__arrow-prev
+        position: absolute
+        top: 50%
+        left: 60%
+    
+        width: 8px
+        height: 8px
+        border-top: 2px solid $white
+        border-right: 2px solid $white
+        transform: translate(-50%, -50%) rotate(-135deg)
+
+        
+
+
+        

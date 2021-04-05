@@ -1,0 +1,147 @@
+.online
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    padding-top: 140px
+    height: 87%
+    z-index: 2
+    background-color: $white
+    border-radius: 32px 32px 0px 0px
+    display: block
+    transform: translateY(100%)
+    transition: transform .3s ease
+    z-index: 6
+    &.active
+        transform: translateY(0%)
+    @media (max-width: 1200px)
+        padding-top: 120px
+    @media (max-width: 768px)
+        padding-top: 24px
+    &-close
+        position: absolute
+        top: 2%
+        right: 1%
+        width: 48px
+        height: 48px
+        background: darken($athens-gray, 5%)
+        border-radius: 100px
+        @media (max-width: 768px)
+            top: 3.3%
+            right: 5%
+            width: 24px
+            height: 24px
+            
+    &-close__line
+        position: absolute
+        top: 50%
+        left: 50%
+        display: inline-block
+        width: 18px
+        height: 2px
+        background-color: darken($athens-gray, 20%)
+        transform: translate(-50%, -50%)
+
+        
+        // transform: rotate(45deg)
+        @media (max-width: 768px)
+            width: 9px
+    &-close__line--one
+        transform: translate(-50%, -50%) rotate(45deg)
+    &-close__line--two
+        transform: translate(-50%, -50%) rotate(-45deg)
+    &-inner
+        max-width: 655px
+        margin: 0 auto
+    &__title
+        margin-bottom: 24px
+    &__descr
+        max-width: 466px
+        margin-bottom: 44px
+        +gilroy-reg
+        font-size: 16px
+        color: $gray
+        line-height: 1.7
+    &-row
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 32px
+        @media (max-width: 768px)
+            flex-direction: column
+            margin-bottom: 0px
+    &-label
+        width: 47%
+        @media (max-width: 768px)
+            width: 100%
+    &-label
+        margin-bottom: 8px
+    &__input
+        width: 100%
+        @media (max-width: 768px)
+            width: 100%
+    &-footer
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 26px 23px
+        border: 2px solid darken($athens-gray, 10%)
+        border-radius: 16px
+        margin-bottom: 32px
+        @media (max-width: 768px)
+            flex-direction: column-reverse
+            border: none
+            padding: 0
+            
+    &-footer__descr
+        +gilroy-reg
+        font-size: 14px
+        max-width: 340px
+        color: $gray
+        @media (max-width: 768px)
+            text-align: center
+        span
+            color: darken($gray, 100%) 
+
+    &__btn
+        max-width: 174px
+        padding: 15px 23px
+        @media (max-width: 768px)
+            max-width: 100%
+            width: 100%
+            margin-bottom: 16px
+    &-socials
+        display: flex
+        align-items: center
+        justify-content: center
+    &-socials__item:not(:last-of-type)
+        margin-right: 16px
+    &-socials__link
+        position: relative
+        display: block
+        width: 48px
+        height: 48px
+        border: 2px solid $gray
+        
+        box-sizing: border-box
+        border-radius: 200px
+        
+        svg
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+    &-socials--whatsapp
+        
+        svg
+            display: inline-block
+            width: 18px
+            height: 18px
+            
+    &-socials--telegram
+        
+        svg
+            width: 22px
+            height: 17px
+
