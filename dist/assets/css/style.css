@@ -2007,6 +2007,7 @@ button.swiper-pagination-bullet {
   box-shadow: none;
   border-radius: 100%;
   background: #ff9514;
+  cursor: pointer;
 }
 
 .noUi-horizontal .noUi-handle::after, .noUi-horizontal .noUi-handle::before {
