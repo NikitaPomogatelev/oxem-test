@@ -68,7 +68,8 @@ const rangeSlider = () => {
         let calcPayment = inputCost.value * percent / 100;
         inputPayment.value = (Math.round(calcPayment));
         // Ежемесячный платеж
-        let calcCostPerMounth = inputCost.value - inputPayment.value * ((percent / 100) / (1 + (percent / 100)) - inputDate.value - 1);
+      
+        let calcCostPerMounth = inputCost.value - inputPayment.value * ( (percent / 100) / (1 + (percent / 100)) - inputDate.value - 1);
         inputPerMounth.value = `${Math.round(calcCostPerMounth)} ₽`;
         // Сумма договора лизинга
         let calcContract = calcPayment + inputDate.value * calcCostPerMounth;
@@ -82,8 +83,6 @@ const rangeSlider = () => {
         calcCost();
     });
     paymentSlider.noUiSlider.on('update', (values) => {
-        let calcPayPercent = inputPayment.value * 100 / inputCost.value;
-        console.log(calcPayPercent);
         calcInputPercent.textContent = `${Math.round(values[1])}%`;
         calcCost();
     });

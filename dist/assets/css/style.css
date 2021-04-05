@@ -578,7 +578,7 @@ input[type=number] {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 5;
+  z-index: 4;
   background-color: #fff;
 }
 
@@ -612,10 +612,27 @@ input[type=number] {
 }
 
 .header__logo {
-  width: 200px;
-  height: 35px;
+  height: 29px;
   margin-right: 35px;
   display: flex;
+  align-items: center;
+}
+
+.header__logo--leasing {
+  width: 110px;
+  height: 29px;
+  margin-right: 2px;
+}
+
+.header__logo--car {
+  width: 54px;
+  height: 22px;
+}
+
+@media (max-width: 768px) {
+  .header__logo--car {
+    fill: #fff;
+  }
 }
 
 .header__logo-descr {
@@ -2116,6 +2133,12 @@ button.swiper-pagination-bullet {
 @media (max-width: 1200px) {
   .calc__range-slider {
     width: 96%;
+  }
+}
+
+@media (max-width: 768px) {
+  .calc__range-slider {
+    width: 92%;
   }
 }
 

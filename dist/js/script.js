@@ -24708,6 +24708,7 @@ document.addEventListener('DOMContentLoaded', function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var burgerMenu = function burgerMenu() {
+  var header = document.querySelector('.header');
   var burger = document.querySelector('.burger');
   var headerMenu = document.querySelector('.header-menu');
   var $overlay = document.querySelector('.overlay');
@@ -24727,6 +24728,7 @@ var burgerMenu = function burgerMenu() {
 
   burger.addEventListener('click', function (e) {
     addClasses();
+    header.style.zIndex = '5';
   });
   headerMenu.addEventListener('click', function (e) {
     var target = e.target;
@@ -24734,14 +24736,17 @@ var burgerMenu = function burgerMenu() {
     if (target.classList.contains('btn-request') || target.closest('.btn-request')) {
       removeClasses();
       $overlay.classList.add('active');
+      header.style.zIndex = '';
     }
 
     if (target.classList.contains('header-close') || target.closest('.header-close')) {
       removeClasses();
+      header.style.zIndex = '';
     }
   });
   $overlay.addEventListener('click', function () {
     removeClasses();
+    header.style.zIndex = '';
   });
 };
 
@@ -24991,8 +24996,6 @@ var rangeSlider = function rangeSlider() {
     calcCost();
   });
   paymentSlider.noUiSlider.on('update', function (values) {
-    var calcPayPercent = inputPayment.value * 100 / inputCost.value;
-    console.log(calcPayPercent);
     calcInputPercent.textContent = "".concat(Math.round(values[1]), "%");
     calcCost();
   });
