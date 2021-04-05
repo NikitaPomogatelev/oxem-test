@@ -24991,7 +24991,7 @@ var rangeSlider = function rangeSlider() {
     calcCost();
   });
   paymentSlider.noUiSlider.on('update', function (values) {
-    var calcPayPercent = inputPayment.value * 100 / 100;
+    var calcPayPercent = inputPayment.value * 100 / inputCost.value;
     console.log(calcPayPercent);
     calcInputPercent.textContent = "".concat(Math.round(values[1]), "%");
     calcCost();

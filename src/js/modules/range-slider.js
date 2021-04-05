@@ -82,7 +82,7 @@ const rangeSlider = () => {
         calcCost();
     });
     paymentSlider.noUiSlider.on('update', (values) => {
-        let calcPayPercent = inputPayment.value * 100 / 100;
+        let calcPayPercent = inputPayment.value * 100 / inputCost.value;
         console.log(calcPayPercent);
         calcInputPercent.textContent = `${Math.round(values[1])}%`;
         calcCost();
