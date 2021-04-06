@@ -585,6 +585,7 @@ input[type=number] {
 @media (max-width: 768px) {
   .header {
     background-color: transparent;
+    background-color: #000;
   }
 }
 
@@ -708,7 +709,7 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   width: 329px;
-  height: 610px;
+  height: 100vh;
   padding: 60px 40px;
   background-color: #fff;
   border-radius: 32px 0px 0px 0px;
