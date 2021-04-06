@@ -21,7 +21,7 @@ const maskValidate = () => {
 
 	const updateCalcArray = () => {
 		calcInputs.forEach(input => {
-			calcArray.push(input.name + ': ' + input.value);	
+			calcArray.push(input.name + '"' + ': '  + '"' + input.value);	
 		})
 	}
 
@@ -67,7 +67,6 @@ const maskValidate = () => {
 				if (!pattern.test(input.value)) {
 					input.classList.add('error');
 					err = true;
-					console.log(err);
 
 				} 
 				

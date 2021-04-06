@@ -21751,7 +21751,7 @@ var maskValidate = function maskValidate() {
 
   var updateCalcArray = function updateCalcArray() {
     calcInputs.forEach(function (input) {
-      calcArray.push(input.name + ': ' + input.value);
+      calcArray.push(input.name + '"' + ': ' + '"' + input.value);
     });
   }; // Отправка формы
 
@@ -21790,7 +21790,6 @@ var maskValidate = function maskValidate() {
         if (!pattern.test(input.value)) {
           input.classList.add('error');
           err = true;
-          console.log(err);
         }
       });
 
