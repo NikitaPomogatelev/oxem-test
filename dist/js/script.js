@@ -21741,7 +21741,7 @@ var maskValidate = function maskValidate() {
   im.mask(inputs);
 
   var postData = function postData(dataUser) {
-    return fetch('../assets/resources/server.php', {
+    return fetch('./assets/resources/mail.php', {
       method: 'POST',
       body: dataUser
     });
@@ -21750,7 +21750,6 @@ var maskValidate = function maskValidate() {
 
   var sendForm = function sendForm() {
     var formData = new FormData(onlineForm);
-    console.log(JSON.stringify(formData));
     postData(formData).then(function (res) {
       if (!res.ok) {
         throw new Error("\u0412\u043E\u0437\u043D\u0438\u043A\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 \u043F\u043E \u0430\u0434\u0440\u0435\u0441\u0443: ".concat(res.url, " \u0421\u0442\u0430\u0442\u0443\u0441 \u043E\u0448\u0438\u0431\u043A\u0438: ").concat(res.status));

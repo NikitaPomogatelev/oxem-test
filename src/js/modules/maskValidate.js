@@ -12,7 +12,7 @@ const maskValidate = () => {
     const im = new Inputmask('+7 (999) 999-99-99');
     im.mask(inputs);
 
-	const postData = dataUser => fetch('../assets/resources/server.php', {
+	const postData = dataUser => fetch('./assets/resources/mail.php', {
 		method: 'POST',
 		body: dataUser,
 	});
@@ -20,7 +20,8 @@ const maskValidate = () => {
 	// Отправка формы
 	const sendForm = () => {
         const formData = new FormData(onlineForm);
-        console.log(JSON.stringify(formData));
+		
+       
         
 		postData(formData)
 			.then(res => {
@@ -49,7 +50,6 @@ const maskValidate = () => {
 		onlineForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-
 			let err = false;
 
 			// Валидация полей
