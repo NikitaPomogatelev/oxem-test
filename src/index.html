@@ -234,12 +234,13 @@
                     <h2 class="title online__title">Онлайн-заявка</h2>
                 <p class="online__descr">Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы</p>
                 <form class="online__form">
+                    <input type="hidden" name="form_online" value="Данные пользователя" data-valid="notEmpty">
                     <div class="online-row">
                         <label class="online-label">
-                            <input class="input online__input" type="tel" placeholder="Телефон" name="phone">
+                            <input class="input online__input" type="tel" placeholder="Телефон" name="phone" data-valid="notEmpty">
                         </label>
                         <label class="online-label">
-                            <input class="input online__input" type="text" placeholder="Имя" name="user_name">
+                            <input class="input online__input" type="text" placeholder="Имя" name="user_name" data-valid="notEmpty">
                         </label>
                     </div>
                     <div class="online-footer">

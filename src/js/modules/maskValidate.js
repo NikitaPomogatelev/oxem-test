@@ -7,6 +7,7 @@ const maskValidate = () => {
     const inputs = document.querySelectorAll('input[type="tel"]');
     const onlineForm = document.querySelector('.online__form');
     const calcForm = document.querySelector('.calc__form');
+    const calcFormInputs = calcForm.querySelector('input');
     const onlineInputs = onlineForm.querySelectorAll('input');
 
     const im = new Inputmask('+7 (999) 999-99-99');
@@ -17,11 +18,16 @@ const maskValidate = () => {
 		body: dataUser,
 	});
 
+	
+
 	// Отправка формы
-	const sendForm = () => {
-        const formData = new FormData(onlineForm);
+	const sendForm = (form) => {
+        const formData = new FormData(form);
+		console.log(calcFormInputs);
 		
-       
+		
+		
+        
         
 		postData(formData)
 			.then(res => {
@@ -44,34 +50,33 @@ const maskValidate = () => {
         
 		// Карта валидации
 		let patterns = {
-			user_name: /.+/,
-			phone: /.+/,
+			notEmpty: /.+/,
 		};
 		onlineForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
 			let err = false;
-
+			
 			// Валидация полей
 			onlineInputs.forEach(input => {
 				
 				input.value = input.value.trim();
-				let pattern = patterns[input.name];
-
+				let pattern = patterns[input.dataset.valid];
 				if (!pattern.test(input.value)) {
 					input.classList.add('error');
 					err = true;
-
+					console.log(err);
 
 				} 
-				else {
-					sendForm();
-				}
+				
 			});
 			if (err) {
 				e.preventDefault();
 				alert('Заполните все поля')
-			} 
+			}
+			else {
+				sendForm(onlineForm);					
+			}
 
 		});
 		onlineForm.addEventListener('focusin', (e) => {
