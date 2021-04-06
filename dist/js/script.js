@@ -21567,7 +21567,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log(1);
   Object(_modules_hero_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_range_slider__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_burger_menu__WEBPACK_IMPORTED_MODULE_2__["default"])();
@@ -21947,7 +21946,7 @@ var rangeSlider = function rangeSlider() {
     inputContract.value = "".concat(Math.round(calcContract), " \u20BD");
   };
 
-  costSlider.noUiSlider.on('update', function (values, handle) {
+  costSlider.noUiSlider.on('update', function (values) {
     inputCost.value = Math.round(values[1]);
     calcCost();
   });
@@ -21955,7 +21954,7 @@ var rangeSlider = function rangeSlider() {
     calcInputPercent.textContent = "".concat(Math.round(values[1]), "%");
     calcCost();
   });
-  dateSlider.noUiSlider.on('update', function (values, handle) {
+  dateSlider.noUiSlider.on('update', function (values) {
     inputDate.value = Math.round(values[1]);
     calcCost();
   });

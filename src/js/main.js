@@ -6,13 +6,12 @@ import openForm from './modules/openForm';
 
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
-   console.log(1);
    heroSlider();
    rangeSlider();
    burgerMenu();
    maskValidate();
    openForm();
 
-   
 });

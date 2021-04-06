@@ -4,6 +4,7 @@ import noUiSlider from 'nouislider';
 
 
 
+
 const rangeSlider = () => {
     const costSlider = document.querySelector('.calc__slider-cost');
     const paymentSlider = document.querySelector('.calc__slider-payment');
@@ -24,6 +25,7 @@ const rangeSlider = () => {
             'min': 1000000,
             'max': 6000000
         },
+        
     });
     noUiSlider.create(paymentSlider, {
         start: [10, 60],
@@ -32,7 +34,8 @@ const rangeSlider = () => {
         range: {
             'min': 10,
             'max': 60
-        }
+        },
+       
     });
     noUiSlider.create(dateSlider, {
         start: [1, 60],
@@ -41,8 +44,11 @@ const rangeSlider = () => {
         range: {
             'min': 1,
             'max': 60
-        }
+        },
+        
     });
+
+    
 
     const formatRubles = (number) => {
         return accounting.formatNumber(number, { 
@@ -78,7 +84,7 @@ const rangeSlider = () => {
     };
 
 
-    costSlider.noUiSlider.on('update', (values, handle) => {
+    costSlider.noUiSlider.on('update', (values) => {
         inputCost.value = Math.round(values[1]);
         calcCost();
     });
@@ -86,7 +92,7 @@ const rangeSlider = () => {
         calcInputPercent.textContent = `${Math.round(values[1])}%`;
         calcCost();
     });
-    dateSlider.noUiSlider.on('update', (values, handle) => {
+    dateSlider.noUiSlider.on('update', (values) => {
         inputDate.value = Math.round(values[1]);
         calcCost();
     });
