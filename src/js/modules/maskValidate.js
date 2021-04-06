@@ -7,8 +7,9 @@ const maskValidate = () => {
     const inputs = document.querySelectorAll('input[type="tel"]');
     const onlineForm = document.querySelector('.online__form');
     const calcForm = document.querySelector('.calc__form');
-    const calcFormInputs = calcForm.querySelector('input');
+    const calcInputs = calcForm.querySelectorAll('.calc-input');
     const onlineInputs = onlineForm.querySelectorAll('input');
+	const calcArray = [];
 
     const im = new Inputmask('+7 (999) 999-99-99');
     im.mask(inputs);
@@ -17,18 +18,16 @@ const maskValidate = () => {
 		method: 'POST',
 		body: dataUser,
 	});
-
 	
-
+	calcInputs.forEach(input => {
+		calcArray.push(input.name + ': ' + input.value);	
+	})
+	console.log(calcInputs.value)
 	// Отправка формы
 	const sendForm = (form) => {
         const formData = new FormData(form);
-		console.log(calcFormInputs);
-		
-		
-		
-        
-        
+		formData.append('Калькулятор', JSON.stringify(calcArray));
+
 		postData(formData)
 			.then(res => {
 				if (!res.ok) {
@@ -91,6 +90,8 @@ const maskValidate = () => {
 	}
 
 	sendValidForm();
+
+	
 }
 
 export default maskValidate;
