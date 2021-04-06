@@ -18,14 +18,17 @@ const maskValidate = () => {
 		method: 'POST',
 		body: dataUser,
 	});
-	
-	calcInputs.forEach(input => {
-		calcArray.push(input.name + ': ' + input.value);	
-	})
-	console.log(calcInputs.value)
+
+	const updateCalcArray = () => {
+		calcInputs.forEach(input => {
+			calcArray.push(input.name + ': ' + input.value);	
+		})
+	}
+
 	// Отправка формы
 	const sendForm = (form) => {
         const formData = new FormData(form);
+		updateCalcArray();
 		formData.append('Калькулятор', JSON.stringify(calcArray));
 
 		postData(formData)

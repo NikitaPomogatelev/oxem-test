@@ -21749,14 +21749,16 @@ var maskValidate = function maskValidate() {
     });
   };
 
-  calcInputs.forEach(function (input) {
-    calcArray.push(input.name + ': ' + input.value);
-    console.log(calcArray);
-  });
-  console.log(calcInputs.value); // Отправка формы
+  var updateCalcArray = function updateCalcArray() {
+    calcInputs.forEach(function (input) {
+      calcArray.push(input.name + ': ' + input.value);
+    });
+  }; // Отправка формы
+
 
   var sendForm = function sendForm(form) {
     var formData = new FormData(form);
+    updateCalcArray();
     formData.append('Калькулятор', JSON.stringify(calcArray));
     postData(formData).then(function (res) {
       if (!res.ok) {
