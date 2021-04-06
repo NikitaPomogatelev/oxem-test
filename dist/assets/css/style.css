@@ -2346,6 +2346,10 @@ button.swiper-pagination-bullet {
   width: 100%;
 }
 
+.online__input.error {
+  border: 1px solid red;
+}
+
 @media (max-width: 768px) {
   .online__input {
     width: 100%;

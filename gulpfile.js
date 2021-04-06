@@ -18,6 +18,7 @@ const {src, dest, parallel, series, watch} = require('gulp'),
 
 
 const dist = './dist/'
+// const dist = './../../Server/OSPanel/domains/oxem-test/'
 
 const clean = () => {
     return del([dist])
