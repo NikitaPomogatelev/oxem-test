@@ -21789,6 +21789,10 @@ var maskValidate = function maskValidate() {
         if (!pattern.test(input.value)) {
           input.classList.add('error');
           err = true;
+          msg = 'Заполните поля!';
+          var cont = document.querySelectorAll('.online-error').forEach(function (el) {
+            el.append(msg[i]);
+          });
         }
       });
 
@@ -21939,7 +21943,7 @@ var rangeSlider = function rangeSlider() {
     var calcPayment = inputCost.value * percent / 100;
     inputPayment.value = Math.round(calcPayment); // Ежемесячный платеж
 
-    var calcCostPerMounth = inputCost.value - inputPayment.value * (percent / 100 / (1 + percent / 100) - inputDate.value - 1);
+    var calcCostPerMounth = inputCost.value - (inputPayment.value * (percent / 100) / (1 + percent / 100) - inputDate.value - 1);
     inputPerMounth.value = "".concat(Math.round(calcCostPerMounth), " \u20BD"); // Сумма договора лизинга
 
     var calcContract = calcPayment + inputDate.value * calcCostPerMounth;

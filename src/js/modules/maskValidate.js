@@ -47,6 +47,8 @@ const maskValidate = () => {
 			});
 
 	}
+
+	
 	// Валидация и отправка формы
 	const sendValidForm = () => {
         
@@ -60,6 +62,7 @@ const maskValidate = () => {
 			let err = false;
 			
 			// Валидация полей
+			
 			onlineInputs.forEach(input => {
 				
 				input.value = input.value.trim();
@@ -67,6 +70,10 @@ const maskValidate = () => {
 				if (!pattern.test(input.value)) {
 					input.classList.add('error');
 					err = true;
+					msg = 'Заполните поля!'
+					let cont = document.querySelectorAll('.online-error').forEach(el => {
+						el.append(msg[i]);
+					})
 
 				} 
 				
