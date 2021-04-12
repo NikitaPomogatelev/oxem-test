@@ -13,17 +13,25 @@
     
     border-radius: 40px
     transition: color .3s ease, background .4s ease
-@media( min-width: 1200px)
-    .btn:hover
-        color: $white
-        background: $orange
 .btn-light
     color: $orange
     border: 1px solid $orange
+    @media( min-width: 1200px)
+        &:hover
+            color: $white
+            background: $orange
+.btn-light:active
+    background: lighten($orange, 15%) 
+        
 .btn-orange
     color: $white
-    border: 1px solid $orange
+    
     background-color: $orange
+    @media( min-width: 1200px)
+        &:hover
+            background: lighten($dark, 20%) 
+.btn-orange:active
+    background: lighten($dark, 10%) 
         
 .burger
     display: none
@@ -74,7 +82,7 @@
     border-radius: 16px
     color: inherit
     &:focus
-        background-color: $white!important
+        background-color: $white
         border: 1px solid rgba($orange, 0.5)
         box-shadow: 0px 0px 6px 3px rgba(255, 149, 20, 0.35);
 
